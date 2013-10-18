@@ -1,0 +1,76 @@
+window
+  name Winslow
+  windowwidth 8
+  windowheight 6
+  columns 400
+  viewpoint 0 -1 5
+  ambient 6 6 6 ;
+
+tiled
+  name Trianna
+  color 128 128 255
+  diffuse 1 1 1
+  reflective .2 .2 .1
+  point -5.5 -4 -2
+  orient1 0 0.5 -1
+  width 20
+  orient2 1 0.5 0
+  height 10
+  color2 255 64 128
+  diffuse2 1 1 1
+  tilewidth 1
+  tileheight 0.75 ;
+
+sphere
+  name Sylvein
+  color black
+  reflective 0.01 0.01 0.01
+  diffuse 0.1 0.1 0.1
+  center -2.5 1 -5
+  radius 1.25 ;
+
+ring
+  name Richard
+  color 32 0 128
+  diffuse 1 1 1
+  reflective .5 .5 .5
+  point -2.5 1 -5
+  orient1 1 0 1
+  orient2 .5 1 0
+  radius 2
+  width .5 ;
+
+ring
+  name Ramus
+  color 32 0 255
+  diffuse 1 1 1
+  reflective .5 .5 .5
+  point -2.5 1 -5
+  orient1 -.5 -1 .5
+  orient2 0 .5 -.5
+  radius 3
+  width 1 ;
+
+triangle
+  name Trillian
+  color green
+  diffuse 1 1 1
+  point -7 0 -1
+  orient1 0 1 -.5
+  length1 5
+  orient2 0 .5 1
+  length2 4 ;
+  
+
+pointlight
+  name Petrievich
+  color orange
+  brightness 10
+  center 3 4 -1 ;
+
+pointlight
+  name Paige
+  color red
+  brightness 10
+  center -3 4 -1 ;
+

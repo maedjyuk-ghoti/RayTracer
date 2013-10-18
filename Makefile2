@@ -1,0 +1,79 @@
+# Makefile for ray tracer 3
+CC = gcc
+CFLAGS = -g -Wall
+
+OBJS= main.o       \
+      scene.o      \
+      entity.o     \
+      sceneobj.o   \
+      plane.o      \
+      sphere.o     \
+      list.o       \
+      image.o      \
+      readVals.o   \
+      window.o     \
+      render.o     \
+      raytrace.o   \
+      tuple.o	   \
+      pointlight.o \
+      lighting.o   \
+      triangle.o   \
+      rectangle.o  \
+      polyhit.o
+
+INCS=   ray.h        \
+        scene.h      \
+        window.h     \
+        image.h      \
+        list.h       \
+        entity.h     \
+        sceneobj.h   \
+        plane.h      \
+        sphere.h     \
+        tuple.h      \
+        render.h     \
+        raytrace.h   \
+        readVals.h   \
+        pointlight.h \
+        lighting.h   \
+        triangle.h   \
+        rectangle.h  \
+        polyhit.h
+
+ray2: ${OBJS}
+	@echo
+	@echo Linking $@
+	gcc -o $@ -Wall -g ${OBJS} -lm
+
+${OBJS}: ${INCS} Makefile
+
+test:
+	./ray2 scene.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+triangle:
+	./ray2 trisamp1.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+rectangle:
+	./ray2 rectsamp1.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+shadow:
+	./ray2 shadow.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+shadow2:
+	./ray2 shadow2.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+newscene:
+	./ray2 newscene.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+myscene:
+	./ray2 myscene.txt output.ppm
+	cjpeg -q 95 output.ppm > jpeg.jpg
+
+clean:
+	rm -f *.o  ray
